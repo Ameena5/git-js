@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #but{
+          display: none;
+        }
+    </style>
+</head>
+<body>
+     <h3 style="text-align: center;"> GENERATE OTP</h3>
+        <button id="but"> </button> 
+
+    <script>
+        var a=""
+            btn=document.createElement("button")
+            btn.innerText="CLICK FOR OTP"
+            btn.style.position = "absolute";
+            btn.style.top = "50%";
+            btn.style.left = "50%";
+            btn.style.transform = "translate(-50%, -50%)"    
+            btn.style.width = "200px";  
+            btn.style.height="50px"
+            btn.style.textAlign = "center";
+            
+              btn.addEventListener("click" ,function(e){
+              e.preventDefault()
+              a=""
+              for(i=0;i<6;i++){
+
+            var h=Math.floor(Math.random()*10)
+
+             a+=h
+            }          
+              but=document.getElementById("but")
+               //but=document.createElement("button")
+              but.innerText= a;
+              but.style.position = "absolute";
+              but.style.top = "60%";
+              but.style.left = "50%";
+              but.style.transform = "translate(-50%, -50%)"    
+              but.style.width = "200px";  
+              but.style.height="50px";
+              but.style.display = "inline-block"
+              
+
+
+              localStorage.setItem("otp",a)
+
+            })
+
+
+        console.log(a)
+       document.body.append(btn)
+    </script>
+</body>
+</html>
