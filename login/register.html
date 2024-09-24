@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form action="">
+        <input type="text"  id="firstname" placeholder="Firstname"><br><br>
+        <input type="text"  id="lastname" placeholder="Lastname"><br><br>
+        <input type="password"  id="password"  placeholder="Password"><br><br>
+        <input type="password"  id="conformpassword" placeholder="Confirm password"><br><br>
+        <input type="mobile"   id="mobile"  placeholder="Enter mobile number"><br><br>
+        <input type="button"  id="reg"  value="Enter login Details">
+
+    </form>
+
+      <script>
+
+     var    btn=document.getElementById("reg");
+         
+     btn.addEventListener("click" ,function(e){
+
+
+        e.preventDefault()
+
+        var firstname=document.getElementById("firstname").value
+    var lastname=document.getElementById("lastname").value
+    var password=document.getElementById("password").value
+    var conformpassword=document.getElementById("conformpassword").value
+    var mobile=document.getElementById("mobile").value
+       
+    
+     console.log(firstname ,lastname,password,conformpassword,mobile)
+
+
+
+   var data=localStorage.getItem("register")
+    var data1=JSON.parse(data)
+    console.log("regdata" ,data1)
+      
+
+    var ar=[]
+    for(i=0;i<data1.length;i++){
+        if(data1[i].firstname==firstname && lastname==lastname && password==password &&conformpassword==conformpassword &&mobile==mobile){
+            ar.push(data1[i])
+            console.log(ar)
+        }
+        console.log(ar)
+        if(ar.length>0){
+            if(firstname==ar[0].firstname && lastname==ar[0].lastname && password==ar[0].password &&conformpassword==ar[0].conformpassword &&mobile==ar[0].mobile){
+                alert("login succesuffuly")
+            }
+            else{
+                alert("give valid inputs")
+            }
+             }
+             else{
+              alert("please register")
+            }
+       
+    }
+})
+</script>
+</body>
+</html>

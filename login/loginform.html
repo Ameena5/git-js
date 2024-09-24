@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    <form action="">
+        <input type="text"  id="firstname" placeholder="Firstname"><br><br>
+        <input type="text"  id="lastname" placeholder="Lastname"><br><br>
+        <input type="password"  id="password"  placeholder="Password"><br><br>
+        <input type="password"  id="conformpassword" placeholder="Confirm password"><br><br>
+        <input type="mobile"   id="mobile"  placeholder="Enter mobile number"><br><br>
+        <input type="button"  id="reg"  value="Enter Your Details">
+    </form>
+
+      <script>
+
+     var    btn=document.getElementById("reg");
+         var arr=[]
+     btn.addEventListener("click" ,function(e){
+
+
+        e.preventDefault()
+
+    var firstname=document.getElementById("firstname").value
+    var lastname=document.getElementById("lastname").value
+    var password=document.getElementById("password").value
+    var conformpassword=document.getElementById("conformpassword").value
+    var mobile=document.getElementById("mobile").value
+       
+    // console.log(firstname ,lastname,pass,cnfmpass,mobile)
+
+
+     var obj={
+        firstname:firstname,
+        lastname:lastname,
+        password:password,
+        conformpassword:conformpassword,
+        mobile:mobile,
+     }
+         console.log(obj)
+         arr.push(obj)
+         localStorage.setItem("register",JSON.stringify(arr))
+
+         var y=confirm("if you want to go another page")
+
+         if(y){
+
+            window.location.assign("./register.html")
+         }
+
+     })
+
+
+
+      </script>
+    
+
+
+
+
+</body>
+</html>
